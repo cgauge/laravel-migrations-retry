@@ -1,0 +1,19 @@
+{
+    "name": "customergauge/laravel-migrations-retry",
+    "require": {
+        "illuminate/database": "^5.6",
+        "illuminate/console": "^5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "CustomerGauge\\RetryMigrations\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CustomerGauge\\RetryMigrations\\RegisterCommandServiceProvider"
+            ]
+        }
+    }
+}
