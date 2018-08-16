@@ -14,8 +14,8 @@ class MigrateRetryCommand extends BaseCommand
 
     public function handle()
     {
-        $tries = (int)$this->option('tries');
-        $delay = (int)$this->option('delay');
+        $tries = (int) $this->option('tries');
+        $delay = (int) $this->option('delay');
 
         retry($tries, function () {
             Artisan::call('migrate', $this->migrateParameters());
@@ -24,7 +24,7 @@ class MigrateRetryCommand extends BaseCommand
         $this->output->write(Artisan::output());
     }
 
-    private function migrateParameters()
+    private function migrateParameters() : array
     {
         $parameters = [];
 
@@ -37,6 +37,6 @@ class MigrateRetryCommand extends BaseCommand
 
     private function shouldSeed(): bool
     {
-        return (bool)$this->option('seed');
+        return (bool) $this->option('seed');
     }
 }
